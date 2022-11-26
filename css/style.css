@@ -1,0 +1,1507 @@
+/** @format */
+
+@font-face {
+	font-family: "Philosopher";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/philosopher/v19/vEFI2_5QCwIS4_Dhez5jcWjValgb8tc.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+		U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Start Global Rules */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:root {
+	--main-color: #0f7571;
+	--main-bgc: #57adac;
+	--main-color-alt: #2c323c;
+	--main-transition: all 0.4s ease-in-out;
+	--section-background: #fff;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: Philosopher, sans-serif;
+
+	background-color: var(--section-background);
+}
+a {
+	text-decoration: none !important;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.section-title h1 {
+	font-size: 8vh;
+	font-family: "Philosopher";
+	color: var(--main-color) !important;
+}
+.section-title::after {
+	content: url(../imgs/divider-section.png);
+	margin: 20px auto;
+	display: block;
+}
+.bg-main-color {
+	background-color: var(--main-color) !important;
+}
+/*******************************************************************************************************************/
+/******************************           START GLOBAL CODE CSS          ******************************************/
+/*******************************************************************************************************************/
+header .top-bar {
+	width: 100%;
+	height: 50px;
+	background-image: url(../imgs/shape-1.png);
+	background-color: #dcf7f6;
+	padding: 13px;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+	line-height: 1.5;
+	color: #2c323c;
+}
+header span {
+	margin: 0px 25px 0px 0px;
+	font-size: 0.875em;
+}
+header .icon-img img {
+	width: 15px;
+	height: 15px;
+	margin-inline-end: 10px;
+	opacity: 0.6;
+}
+header .social-icon {
+	margin-top: -5px;
+}
+
+header .social-icon a {
+	font-size: 17px;
+	color: black;
+	text-decoration: none;
+}
+header .social-icon a i {
+	width: 30px;
+	height: 30px;
+	padding: 8px 10px;
+	border-radius: 50%;
+	transition: var(--main-transition);
+}
+header .social-icon i:hover {
+	cursor: pointer;
+	background-color: var(--main-color);
+	color: #fff;
+}
+/***********************************   START Nav-Bar   ********************************** */
+.navbar {
+	padding: 0px;
+}
+nav .navbar-brand {
+	display: inline-block;
+	position: relative;
+	padding: 10px 20px 10px 0px;
+}
+nav .navbar-brand img {
+	height: 55px;
+	position: relative;
+	z-index: 5;
+}
+nav .navbar-brand::before {
+	content: "";
+	bottom: 0px;
+	top: 0px;
+	left: -180px;
+	width: 65vh;
+	height: 100%;
+	position: absolute;
+	background-color: var(--main-color);
+}
+nav .navbar-nav {
+	margin: 0px auto;
+}
+nav .navbar-nav li .dropdown-menu {
+	margin: 0;
+	padding: 0;
+	box-shadow: 5px 0 30px 20px rgb(0 0 0 / 5%);
+	border: 0;
+	min-width: 200px;
+	transform: translateY(10%);
+	transition: var(--main-transition);
+}
+nav .navbar-nav li .dropdown-menu .dropdown-item {
+	padding: 8px 15px;
+	display: block;
+	transition: var(--main-transition);
+}
+nav a:hover {
+	text-decoration: none;
+	color: var(--main-color);
+}
+nav .dropdown-item {
+	display: block;
+	width: 100%;
+	padding: 0.23438rem 0.9375rem;
+	clear: both;
+	font-weight: 400;
+	color: #212529;
+	text-align: inherit;
+	text-decoration: none;
+	white-space: nowrap;
+	background-color: transparent;
+	border: 0;
+}
+nav .collapse {
+	display: flex;
+	justify-content: space-around;
+	gap: 50px;
+}
+nav .collapse li a img {
+	width: 20px !important;
+	height: 20px !important;
+	object-fit: contain;
+}
+
+.navbar-toggler-icon {
+	margin: 0px;
+}
+.btn-close {
+	font-size: 18px;
+}
+.btn-close i {
+	opacity: 0;
+}
+.btn-close:hover {
+	cursor: pointer;
+}
+.search-wrapper .search-box {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	width: 80%;
+}
+.search-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999999;
+	background-color: rgba(255, 255, 255, 0.9);
+	overflow: auto;
+	text-align: center;
+	transition: var(--main-transition);
+
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+}
+.search-wrapper .search-box {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	max-width: 90%;
+}
+.search-wrapper .search-box .search-close {
+	position: absolute;
+	top: 20%;
+	right: 20%;
+	line-height: 40px;
+	transition: var(--main-transition);
+
+	font-size: 20px;
+	color: rgba(35, 35, 36, 0.6);
+}
+.search-wrapper .search-box .search-close:hover {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+	font-size: 30px;
+}
+.search-wrapper .search-box .search-form {
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto;
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	-o-transform: scale(0.7);
+	transform: scale(0.7);
+	transition: var(--main-transition);
+}
+
+.search-wrapper .search-box .search-form label {
+	font-size: 18px;
+	color: #23232470;
+	font-weight: 400;
+}
+
+.search-wrapper .search-box .search-form .search-input {
+	position: relative;
+}
+.search-wrapper .search-box .search-form .search-input input {
+	width: 100%;
+	height: 75px;
+	padding: 0 15px;
+	font-size: 30px;
+	font-weight: 300;
+	color: #232324;
+	border: 0;
+	border-bottom: 2px solid #232324;
+	background: 0 0;
+	text-align: center;
+}
+.search-wrapper .search-box .search-form .search-input input:focus-visible {
+	outline: none;
+}
+
+.search-wrapper .search-box .search-form .search-input input::placeholder {
+	opacity: 1;
+	color: var(--main-color);
+}
+
+.search-wrapper .search-box .search-form .search-input button {
+	width: 60px;
+	height: 60px;
+	font-size: 30px;
+	background: 0 0;
+	border: 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.search-wrapper.open {
+	opacity: 1;
+	visibility: visible;
+}
+.search-wrapper.open .search-box .search-form {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+@media (max-width: 767px) {
+	.search-wrapper .search-box .search-form {
+		padding: 0 15px;
+	}
+	.search-wrapper .search-box .search-form label {
+		font-size: 13px;
+	}
+	.search-wrapper .search-box .search-form .search-input button {
+		font-size: 16px;
+		width: 40px;
+		height: 40px;
+	}
+	.search-wrapper .search-box .search-form .search-input input {
+		height: 45px;
+		font-size: 16px;
+		padding: 0 15px;
+	}
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.search-wrapper .search-box .search-form label {
+		font-size: 16px;
+	}
+	.search-wrapper .search-box .search-form .search-input button {
+		font-size: 20px;
+		width: 50px;
+		height: 50px;
+	}
+	.search-wrapper .search-box .search-form .search-input input {
+		height: 55px;
+		font-size: 18px;
+		padding: 0 15px;
+	}
+}
+
+/***********************************   Start Slider   ***********************************/
+.header-slider .uk-position-relative {
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	background: #00000080;
+
+	position: relative;
+}
+
+.header-slider .uk-slideshow-items li::before {
+	content: "";
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	background: linear-gradient(135deg, #fff 42%, rgba(255, 255, 255, 0) 75%);
+	-webkit-animation: gradient 15s ease infinite;
+	animation: gradient 15s ease infinite;
+	z-index: 1;
+	position: absolute;
+	opacity: 0.9;
+}
+.header-slider .uk-header-title {
+	bottom: -20%;
+	left: 10%;
+	max-width: 50%;
+	z-index: 1;
+}
+.header-slider .uk-header-title h1 {
+	font-size: 10vh;
+	font-family: "Philosopher";
+	color: var(--main-color);
+}
+.header-slider .uk-header-title p {
+	color: #666;
+}
+.header-slider .uk-icon {
+	background: #e1cdcd42;
+	border-radius: 50%;
+	padding: 10px 15px;
+	border: 1px solid #fff;
+	opacity: 0.5;
+	transition: var(--main-transition);
+}
+.header-slider .uk-icon:hover {
+	opacity: 0.9;
+	background: #63606042;
+}
+.header-slider .uk-header-title a.btn {
+	color: #2c323c;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-top: 20px;
+	background-color: var(--main-color);
+	border: 1px solid transparent;
+	padding: 0.6rem 1.5rem;
+	font-size: 1rem;
+	border-radius: 25px;
+	transition: var(--main-transition);
+}
+.header-slider .uk-header-title a:hover {
+	background-color: var(--main-bgc);
+	border-color: var(--main-color);
+	text-decoration: none;
+}
+
+/********************************** Start Slider Courses ***********************************/
+.slider-courses {
+	width: 100%;
+	height: auto;
+	background-image: url(../imgs/shape-1.png);
+	background-size: auto;
+	background-repeat: repeat;
+}
+.slider-courses .overlay {
+	background-color: var(--main-color);
+	width: 100%;
+	height: 100%;
+	padding: 50px 0px;
+}
+.slider-courses #courses-filter {
+	width: 100%;
+	height: 50px;
+	/* background: #000; */
+	padding: 0px 20px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 0px;
+	margin-bottom: 50px;
+}
+
+#courses-filter .btn {
+	border: 2px solid #f2f2f2;
+	box-shadow: 5px 5px 20px 5px rgba(255, 255, 255, 0.5);
+	margin: 2px;
+	color: #000;
+	background-color: var(--main-color);
+	border-radius: 25px;
+	padding: 5px 25px;
+	margin-left: -20px;
+	padding-right: 20px;
+	transition: all 0.7s ease-in-out;
+	border: 0 !important;
+	font-weight: 700;
+}
+.slider-courses .filter {
+	display: none;
+}
+
+.slider-courses .show {
+	display: block;
+}
+#courses-filter .btn:hover {
+	z-index: 1;
+	transition: all 0.7s ease-in-out;
+	border: 5px solid #dcf7f6;
+	box-shadow: 5px 5px 20px 15px rgba(0, 0, 0, 0.1);
+	background-color: var(--main-bgc);
+	color: white;
+}
+#courses-filter li:nth-last-of-type(1) {
+	padding: 5px 15px;
+}
+#courses-filter .btn.active {
+	z-index: 1;
+	transition: all 0.7s ease-in-out;
+	border: 5px solid #dcf7f6;
+	box-shadow: 5px 5px 20px 15px rgba(0, 0, 0, 0.1);
+	background-color: var(--main-bgc);
+	color: white;
+}
+.slider-courses .uk-panel {
+	background-color: #fff;
+	padding: 40px 5px;
+	text-align: center;
+	border-radius: 10px;
+	position: relative;
+}
+
+.slider-courses .uk-panel h6,
+.slider-courses .uk-panel h2 {
+	font-family: Philosopher, sans-serif;
+	font-weight: 700;
+	color: var(--main-bgc) !important;
+	font-size: 18px;
+}
+.slider-courses .uk-panel h2 span {
+	color: var(--main-color) !important;
+	display: block;
+	font-size: 30px;
+	margin-top: 20px;
+}
+.slider-courses .uk-panel h6 span {
+	font-weight: 900;
+	font-size: 25px;
+	color: var(--main-color) !important;
+	font-size: 30px;
+}
+.slider-courses .uk-panel:after,
+.slider-courses .uk-panel:before {
+	content: "";
+	width: 70px;
+	height: 70px;
+	display: block;
+	background-image: url(../imgs/prayer-shape.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.slider-courses .uk-panel:after {
+	background-image: url(../imgs/prayer-shape2.png);
+	bottom: 10px;
+	right: 10px;
+	top: auto;
+	left: auto;
+}
+a.uk-position-small svg {
+	color: var(--main-color);
+	font-weight: bold;
+	transform: translate(-50%);
+	margin: 0px;
+	position: relative;
+	left: 0px;
+	width: 10px;
+}
+.slider-courses .prayer-wrapper .uk-panel .btn {
+	color: #fff;
+	cursor: pointer;
+	margin-top: 20px;
+	background-color: var(--main-color);
+	border: 1px solid transparent;
+	padding: 0.6rem 1.5rem;
+	font-size: 1rem;
+	border-radius: 25px;
+	transition: var(--main-transition);
+	position: relative;
+	z-index: 1;
+}
+
+.slider-courses .prayer-wrapper .uk-panel .btn::before {
+	content: "";
+	width: 0%;
+	height: 100%;
+	background-color: var(--main-bgc);
+	position: absolute;
+	top: 0%;
+	left: 2px;
+	border-radius: 25px;
+	transition: var(--main-transition);
+	z-index: 1;
+}
+
+.slider-courses .prayer-wrapper .uk-panel .btn:hover.btn::before {
+	width: 99%;
+	background-color: var(--main-bgc);
+	z-index: -1;
+	overflow: hidden;
+	border-radius: 25px;
+}
+/************************************** Start Online Courses ******************************************/
+.online-courses {
+	padding: 100px 0px;
+}
+.online-courses .course-item {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	transition: var(--main-transition);
+}
+.online-courses .course-item .course-image {
+	height: 300px;
+}
+.online-courses .course-item img {
+	width: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	transition: transform 5s, filter 2s ease-in-out;
+	transform-origin: center center;
+}
+.online-courses .course-item:hover img {
+	transform: scale(1.5);
+}
+.online-courses .course-overlay {
+	position: absolute;
+	width: 100%;
+	height: 40%;
+	bottom: 0%;
+	background-color: #00000080;
+	padding: 10px 20px;
+	font-family: "Philosopher" !important;
+}
+.online-courses .course-item:hover .course-overlay {
+	bottom: 20px;
+	transition: var(--main-transition);
+}
+.online-courses .text-white {
+	color: #fff !important;
+	font-family: "Philosopher" !important;
+}
+/************************************** Start Counter Area ******************************************/
+.counter-area {
+	padding: 100px 0px;
+	background-image: url(../imgs/shape-1.png);
+	background-size: auto;
+	background-repeat: repeat;
+}
+.bg-primary {
+	background-color: var(--main-color) !important;
+}
+.counter-item .counter-icon {
+	width: 100px;
+	height: 100px;
+	background-image: url(../imgs/icon\ 4.png);
+	background-size: contain;
+	text-align: center;
+	float: left;
+	padding: 34px 0px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.counter-item .counter-icon img {
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
+}
+.counter-item .counter-content {
+	width: calc(100% - 100px);
+	float: left;
+	padding-left: 20px;
+}
+/************************************** Start Live Group Courses ******************************************/
+.live-courses {
+	padding: 100px 0px;
+}
+.event-item {
+	display: inline-block;
+	box-shadow: rgba(0, 0, 0, 0.05) 5px 0px 30px 20px;
+	transition: all 0.2s ease-in-out 0s;
+	border-radius: 10px;
+	overflow: hidden;
+	width: 100%;
+}
+.event-item:hover {
+	box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 101px 0px;
+	transform: scale(1.01);
+}
+.event-item .event-image {
+	width: 100%;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	position: relative;
+	overflow: hidden;
+}
+.event-item .event-image img {
+	height: 254px;
+	object-fit: cover;
+	width: 100%;
+	/* transition: all 0.2s ease-in-out 0s; */
+	transition: transform 0.5s, filter 1.5s ease-in-out;
+	filter: grayscale(50%);
+}
+.event-item:hover img {
+	filter: grayscale(0);
+	transform: scale(1.1);
+}
+
+.event-item .event-image .event-btn {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+}
+.event-item .event-content {
+	padding: 20px;
+}
+.event-address {
+	font-size: 0.875em;
+}
+.event-address .icon img {
+	width: 15px;
+	height: 15px;
+}
+.event-address {
+	margin-bottom: 15px;
+}
+.event-content h5 {
+	font-family: "Philosopher" !important;
+}
+.event-item .event-content a {
+	color: var(--main-color);
+}
+
+/************************************** Start Form Area ******************************************/
+.form-area {
+	padding: 50px 0px;
+}
+.form-area .input-group {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+}
+.form-area h2 {
+	font-family: "Philosopher" !important;
+}
+.form-area .input-group > .form-control,
+.form-area .input-group > .form-select {
+	position: relative;
+	width: 1%;
+	min-width: 0px;
+	flex: 1 1 auto;
+}
+.form-area .call-to-action-form input {
+	background-color: rgb(255, 255, 255);
+	margin-right: 15px;
+	border-width: 0px;
+	border-style: initial;
+	border-color: initial;
+	border-image: initial;
+	border-radius: 10px !important;
+}
+.form-area .custom-select,
+.form-area .form-control {
+	height: auto;
+	width: auto;
+}
+.form-area .form-control {
+	display: block;
+	width: 100%;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.6;
+	color: rgb(44, 50, 60);
+	padding: 0.6rem 1.5rem;
+	border: 1px solid rgb(206, 212, 218);
+	border-radius: 10px;
+	transition: var(--main-transition);
+}
+.form-area form {
+	text-align: center;
+}
+.form-area .btn {
+	margin-top: 70px;
+	color: white;
+	background-color: var(--main-color);
+	border: 1px solid #fff;
+	box-shadow: 0 0 0 0.7rem rgba(213, 219, 217, 0.25);
+	padding: 0.6rem 1.5rem;
+	width: 210px;
+	letter-spacing: 2px;
+	font-size: 1.2rem;
+	border-radius: 25px;
+	transition: var(--main-transition);
+	position: relative;
+	z-index: 1;
+}
+
+.form-area .btn::before {
+	content: "";
+	width: 0%;
+	height: 100%;
+	background-color: var(--main-bgc);
+	position: absolute;
+	top: 0%;
+	left: 2px;
+	border-radius: 25px;
+	transition: var(--main-transition);
+	z-index: 1;
+}
+
+.form-area .btn:hover.btn::before {
+	width: 99%;
+	background-color: var(--main-bgc);
+	z-index: -1;
+	overflow: hidden;
+	border-radius: 25px;
+}
+.form-area .form-control:focus {
+	color: #212529;
+	background-color: #fff;
+	border-color: var(--main-color);
+	outline: 0;
+	box-shadow: 0 0 0 0.5rem rgba(213, 219, 217, 0.25);
+}
+/************************************** Start Recorded Courses ******************************************/
+.recorded-courses {
+	padding: 100px 0px;
+	/* position: relative; */
+}
+.recorded-courses p {
+	margin-top: 0px;
+	margin-bottom: 1rem;
+	color: #707070;
+}
+.video-item {
+	position: relative !important;
+	max-height: 230px;
+	overflow: hidden;
+}
+.video-item::before {
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(5deg, rgb(22, 22, 22) 10%, rgba(22, 22, 22, 0.773) 25%, rgba(0, 212, 255, 0) 70%);
+	transition: all 0.5s ease-in-out 0s;
+}
+.video-item:hover::before {
+	background-color: rgba(44, 50, 60, 0.6);
+}
+.video-item .video-image {
+	position: relative;
+	overflow: hidden;
+}
+.video-item .video-image img {
+	transition: transform 2s, filter 1.5s ease-in-out;
+	transform-origin: center center;
+}
+.video-item:hover img {
+	transform: scale(1.5);
+}
+.video-item .video-image .video-popup {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: rgb(255, 255, 255);
+	height: 50px;
+	width: 50px;
+	z-index: 2;
+	background-color: rgba(44, 50, 60, 0.4);
+	text-align: center;
+	border: 2px solid #fff;
+	padding: 12px;
+	border-radius: 50%;
+	transition: all 0.2s ease-in-out 0s;
+}
+.video-item .video-content {
+	position: absolute;
+	bottom: 20px;
+	right: 15px;
+	left: 15px;
+	z-index: 2;
+	transition: all 0.2s ease-in-out 0s;
+}
+.video-item .video-content h5 {
+	font-family: "Philosopher";
+}
+.video-item .badge {
+	display: inline-block;
+	background-color: var(--main-color) !important;
+	font-size: 0.75em;
+	font-weight: 700;
+	line-height: 1;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	padding: 0.4rem 0.8rem;
+	border-radius: 10px;
+	border: none;
+}
+.recorded-courses .btn {
+	color: #fff;
+	cursor: pointer;
+	margin-top: 20px;
+	background-color: var(--main-color);
+	border: 1px solid transparent;
+	padding: 0.6rem 1.5rem;
+	font-size: 1rem;
+	border-radius: 25px;
+	transition: var(--main-transition);
+	position: relative;
+	z-index: 1;
+}
+
+.recorded-courses .btn::before {
+	content: "";
+	width: 0%;
+	height: 100%;
+	background-color: var(--main-bgc);
+	position: absolute;
+	top: 0%;
+	left: 2px;
+	border-radius: 25px;
+	transition: var(--main-transition);
+	z-index: 1;
+}
+
+.recorded-courses .btn:hover.btn::before {
+	width: 99%;
+	background-color: var(--main-bgc);
+	z-index: -1;
+	overflow: hidden;
+	border-radius: 25px;
+}
+/************************************         Start Islamic Text          ******************************************/
+.islamic-text {
+	padding: 100px 0px;
+}
+.islamic-text h2 {
+	font-family: "Philosopher" !important;
+}
+/************************************         Start Islamic Scholar         ******************************************/
+.teachers {
+	padding: 100px 0px;
+}
+.teachers .team-item {
+	box-shadow: 3px 0 20px 10px rgb(0 0 0 / 5%);
+	border-radius: 10px;
+	overflow: hidden;
+	transition: var(--main-transition);
+}
+.teachers .team-item:hover {
+	box-shadow: rgb(17 12 46 / 15%) 0 10px 101px 0;
+}
+.teachers .team-item .team-image {
+	overflow: hidden;
+	position: relative;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.teachers .team-item .team-image img {
+	width: 100%;
+	transition: transform 0.7s ease-in-out;
+	transform: scale(1);
+	transform-origin: 0 0;
+	overflow: hidden;
+}
+.teachers .team-item:hover img {
+	transform: scale(1.25) translateY(-10%);
+}
+.teachers .team-item .team-content {
+	padding: 20px;
+}
+.teachers .team-item .team-content h5 {
+	color: var(--main-color);
+}
+.teachers .team-item .team-social {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 2;
+	margin: 0px;
+	transition: var(--main-transition);
+	cursor: pointer;
+	background-color: var(--main-color);
+
+	border-radius: 25px;
+}
+.teachers .team-social a {
+	color: white;
+	padding: 10px;
+}
+.teachers .team-item:hover .team-social {
+	opacity: 1;
+	visibility: visible;
+}
+.teachers .modal-body img {
+	width: 90%;
+	height: 250px;
+	box-shadow: 3px 0 20px 10px rgb(0 0 0 / 5%);
+	transition: all 0.2s ease-in-out;
+	border-radius: 10px;
+	margin: 15px;
+}
+/************************************         Start Footer          *****************************************/
+
+.footer-top {
+	background-color: var(--main-color);
+	position: relative;
+	overflow: hidden;
+}
+.bg-image-pattern {
+	background-image: url(../imgs/shape-1.png);
+	background-size: auto;
+	background-repeat: repeat;
+}
+.footer-top::before {
+	content: url(../imgs/footer-shape.png);
+	position: absolute;
+	left: -20px;
+	bottom: -20px;
+}
+.footer-widget {
+	position: relative;
+	z-index: 2;
+}
+.footer-widget h4 {
+	font-family: "Philosopher";
+}
+.footer-widget .footer-brand {
+	display: block;
+}
+.footer-widget .footer-brand img {
+	height: 55px;
+}
+.list-inline {
+	padding-left: 0px;
+	list-style: none;
+}
+.footer-widget .footer-list li {
+	margin: 15px 0px;
+}
+.footer-widget .footer-list li a {
+	color: #ffffffbf;
+	word-break: break-all;
+	transition: all 0.2s ease-in-out 0s;
+}
+.footer-widget .footer-list li a:hover {
+	color: #fff;
+}
+.bg-secondary {
+	background-color: rgb(44, 50, 60) !important;
+}
+.py-lg-8 {
+	padding-top: 5.625rem !important;
+	padding-bottom: 5.625rem !important;
+}
+.footer-widget .social-icon {
+	display: flex;
+	gap: 10px;
+}
+.footer-widget .social-icon a {
+	background-color: rgb(255, 255, 255);
+	width: 30px;
+	height: 30px;
+	display: block;
+	text-align: center;
+	color: var(--main-color);
+	padding: 4px 8px;
+	border-radius: 100px;
+	transition: var(--main-transition);
+}
+.footer-widget .social-icon a:hover {
+	background-color: var(--main-bgc);
+	border: 1px solid #fff;
+	color: rgb(255, 255, 255);
+}
+/************************************         Start Services          ***************************************** 
+.service {
+	padding: 100px 0px 150px;
+	background-image: url(../imgs/shape-1.png);
+	background-color: #dcf7f6;
+	position: relative;
+}
+.service .service-item:hover {
+	transform: scale(1.03);
+	box-shadow: 5px 0 30px 20px rgb(0 0 0 / 15%);
+}
+.service .service-item:hover.service-item .service-icon {
+	border: 1px solid var(--main-color);
+}
+.service .service-item {
+	padding-top: 0px;
+	position: relative;
+	z-index: 2;
+	transition: all 0.4s ease-in-out;
+}
+.service .service-item .service-wrapper {
+	text-align: center;
+	padding: 25px;
+	position: relative;
+	transition: all 0.2s ease-in-out;
+	box-shadow: 5px 0 30px 20px rgb(0 0 0 / 5%);
+	margin-top: 35px;
+	border-radius: 10px;
+}
+.service .service-item .service-icon {
+	background-color: #0f7571;
+	width: 80px;
+	height: 80px;
+	margin: 0 auto;
+	padding: 20px 0;
+	margin-top: -60px;
+	border-radius: 100px;
+	border: 5px solid #fff;
+	box-shadow: 5px 0 30px 20px rgb(0 0 0 / 5%);
+	transition: all 0.2s ease-in-out;
+}
+.service .service-item .service-icon img {
+	width: 32px;
+	height: 32px;
+	-o-object-fit: contain;
+	object-fit: contain;
+}
+.service .service-item .service-content a {
+	transition: all 0.2s ease-in-out;
+	text-decoration: none;
+}
+.service .service-item .service-content a:hover {
+	font-size: 17px;
+}
+.service .text-primary {
+	color: #0f7571 !important;
+}
+.service::before {
+	content: url(../imgs/service-shape.png);
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+/***********************************************************************************************************/
+/************************************         RESPONSIVE          ******************************************/
+/***********************************************************************************************************/
+@media (max-width: 576px) {
+	nav .collapse {
+		text-align: end;
+		display: inline;
+	}
+	nav .navbar-nav {
+		align-items: end !important;
+	}
+	nav .navbar-nav img {
+		height: 15px;
+	}
+	.header-slider .uk-header-title {
+		max-width: 80%;
+		bottom: -20%;
+	}
+	img {
+		/* width: 500px; */
+		height: 333px;
+	}
+	.counter-item {
+		padding-top: 10px;
+	}
+	.form-area .input-group .form-control {
+		width: 100%;
+		margin-top: 10px;
+	}
+	.form-area .btn {
+		width: 80%;
+		margin-top: 10px;
+	}
+	.video-item .video-image img {
+		width: 100%;
+	}
+	.team-item {
+		width: 80%;
+		margin: auto;
+	}
+	ul.align-items-center {
+		align-items: end !important;
+	}
+	nav .collapse li a img {
+		width: 20px !important;
+		height: 20px !important;
+		object-fit: contain;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.container {
+		width: 95% !important;
+		padding: 0px;
+	}
+	nav .collapse {
+		display: inline;
+		text-align: end;
+	}
+	nav .navbar-nav {
+		align-items: end !important;
+	}
+	nav .navbar-nav img {
+		height: 15px;
+	}
+	.slider.uk-header-title {
+		max-width: 80%;
+	}
+	.counter-item .counter-content {
+		padding-left: 10px;
+	}
+	.form-area .input-group .form-control {
+		width: 80% !important;
+		margin-top: 10px;
+	}
+	ul.align-items-center {
+		align-items: end !important;
+	}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.navbar-toggler-icon {
+		margin: 0px;
+	}
+	nav .collapse {
+		display: inline;
+		text-align: end;
+	}
+	nav .navbar-nav {
+		align-items: end !important;
+	}
+	nav .navbar-nav img {
+		height: 15px;
+	}
+	ul.align-items-center {
+		align-items: end !important;
+	}
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+	/* .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  } */
+}
+/*****************************************************************************************************************************/
+/************************************         	Online Courses Page		          	******************************************/
+/************************************         	Live  Courses Page		          	******************************************/
+/************************************			recorded-courses-page				******************************************/
+/*****************************************************************************************************************************/
+.recorded-courses-page .page-title-area,
+.online-courses-page .page-title-area,
+.live-courses-page .page-title-area {
+	padding: 50px 0px;
+}
+.recorded-courses-page .page-breadcrumb .breadcrumb,
+.online-courses-page .page-breadcrumb .breadcrumb,
+.live-courses-page .page-breadcrumb .breadcrumb {
+	justify-content: center;
+}
+.recorded-courses-page .page-breadcrumb ol li,
+.recorded-courses-page .page-breadcrumb ol li a,
+.online-courses-page .page-breadcrumb ol li,
+.online-courses-page .page-breadcrumb ol li a,
+.live-courses-page .page-breadcrumb ol li,
+.live-courses-page .page-breadcrumb ol li a {
+	color: #fff;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+	float: left;
+	padding-right: var(--bs-breadcrumb-item-padding-x);
+	color: white;
+	content: var(--bs-breadcrumb-divider, "/");
+}
+.recorded-courses-page .about-area,
+.online-courses-page .about-area,
+.live-courses-page .about-area {
+	padding: 100px 0px;
+}
+.recorded-courses-page .online-course-image,
+.online-courses-page .online-course-image,
+.live-courses-page .online-course-image {
+	height: 100%;
+	width: 100%;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 5px 0 30px 20px rgb(0 0 0 / 5%);
+	border-radius: 10px;
+}
+.recorded-courses-page h1,
+.online-courses-page h1,
+.live-courses-page h1 {
+	font-family: "Philosopher";
+}
+.online-courses-page .text-main-color,
+.live-courses-page .text-main-color {
+	color: var(--main-color);
+	margin-bottom: 0.9375rem !important;
+	font-size: 1.75rem;
+}
+.online-courses-page .trial-now-area,
+.live-courses-page .trial-now-area {
+	padding: 100px 0px;
+	background-color: #dcf7f6 !important;
+}
+.online-courses-page .trial-now-area .btn,
+.live-courses-page .trial-now-area .btn {
+	color: #fff;
+	cursor: pointer;
+	margin-top: 20px;
+	background-color: var(--main-color);
+	border: 1px solid transparent;
+	padding: 0.6rem 1.5rem;
+	font-size: 1rem;
+	border-radius: 25px;
+	transition: var(--main-transition);
+	position: relative;
+	z-index: 1;
+}
+
+.online-courses-page .trial-now-area .btn::before,
+.live-courses-page .trial-now-area .btn::before {
+	content: "";
+	width: 0%;
+	height: 100%;
+	background-color: var(--main-bgc);
+	position: absolute;
+	top: 0%;
+	left: 2px;
+	border-radius: 25px;
+	transition: var(--main-transition);
+	z-index: 1;
+}
+
+.online-courses-page .trial-now-area .btn:hover.btn::before,
+.live-courses-page .trial-now-area .btn:hover.btn::before {
+	width: 99%;
+	background-color: var(--main-bgc);
+	z-index: -1;
+	overflow: hidden;
+	border-radius: 25px;
+}
+/*  */
+.recorded-courses-page .py-lg-10 {
+	padding-top: 7.5rem !important;
+	padding-bottom: 7.5rem !important;
+}
+.recorded-courses-page .course-feature {
+	box-shadow: rgba(0, 0, 0, 0.05) 5px 0px 30px 20px;
+	padding: 20px;
+	transition: all 0.2s ease-in-out 0s;
+	margin-top: 30px;
+}
+.recorded-courses-page .course-feature:hover {
+	transform: scale(1.02);
+	box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 101px 0px;
+}
+.recorded-courses-page .text-primary {
+	color: rgb(15, 117, 113) !important;
+}
+.recorded-courses-page .course-check-list li::before {
+	content: "";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	color: rgb(15, 117, 113);
+	margin-right: 10px;
+	position: absolute;
+	left: 0px;
+}
+.recorded-courses-page .btn {
+	display: inline-block;
+	vertical-align: middle;
+	transform: perspective(1px) translateZ(0px);
+	position: relative;
+	overflow: hidden;
+}
+.recorded-courses-page .btn-primary:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(13, 99, 96);
+	border-color: rgb(12, 94, 90);
+}
+.recorded-courses-page .course-block-author {
+	display: flex;
+	align-items: center;
+}
+.recorded-courses-page .course-block-author img {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	border-radius: 100%;
+}
+.recorded-courses-page .faq-accordion .card {
+	margin-bottom: 1rem;
+	border-width: 0px;
+	border-style: initial;
+	border-color: initial;
+	border-image: initial;
+}
+.recorded-courses-page .faq-accordion .card .card-header {
+	border-width: 0px;
+	border-style: initial;
+	border-color: initial;
+	border-image: initial;
+	padding: 0px;
+}
+.recorded-courses-page .course-check-list li {
+	position: relative;
+	padding-left: 25px;
+	margin: 4px 0px;
+	line-height: 1.8;
+	color: #777;
+}
+.recorded-courses-page .faq-accordion .card .card-header button::after,
+.recorded-courses-page .faq-accordion .card .card-header button::before {
+	content: "";
+	width: 1rem;
+	height: 0.1rem;
+	display: block;
+	position: absolute;
+	right: 1rem;
+	top: 1.3rem;
+	background-color: rgb(15, 117, 113);
+}
+.recorded-courses-page .faq-accordion .card .card-header button[aria-expanded="false"]::after {
+	transform: rotate(90deg);
+}
+.recorded-courses-page .faq-accordion .card .card-header button {
+	width: 100%;
+	text-align: left;
+	background-color: rgb(220, 247, 246);
+	position: relative;
+	font-weight: 700;
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(220, 247, 246);
+	border-image: initial;
+}
+.recorded-courses-page .my-4 {
+	margin-top: 1.875rem !important;
+	margin-bottom: 1.875rem !important;
+}
+.recorded-courses-page .carousel-indicators [data-bs-target] {
+	flex: 1 0 auto !important;
+	text-indent: 0 !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
+.recorded-courses-page .recorded-title-h2 {
+	color: var(--main-color);
+	font-family: "Philosopher";
+	font-size: 22px;
+	margin: 20px 0px 10px;
+}
+.recorded-courses-page .course-feature .btn {
+	color: #fff;
+	cursor: pointer;
+	margin-top: 20px;
+	background-color: var(--main-color);
+	border: 1px solid transparent;
+	padding: 0.6rem 1.5rem;
+	font-size: 1rem;
+	border-radius: 25px;
+	transition: var(--main-transition);
+	position: relative;
+	z-index: 1;
+	letter-spacing: 1.2;
+}
+
+.recorded-courses-page .course-feature .btn::before {
+	content: "";
+	width: 0%;
+	height: 100%;
+	background-color: var(--main-bgc);
+	position: absolute;
+	top: 0%;
+	left: 2px;
+	border-radius: 25px;
+	transition: var(--main-transition);
+	z-index: 1;
+}
+
+.recorded-courses-page .course-feature .btn:hover.btn::before {
+	width: 99%;
+	background-color: var(--main-bgc);
+	z-index: -1;
+	overflow: hidden;
+	border-radius: 25px;
+}
+.recorded-courses-page .entry-content p,
+.recorded-courses-page .typofix ul li {
+	color: #777;
+	line-height: 1.4;
+	font-size: 16px;
+	font-weight: 100;
+	text-rendering: auto;
+	font-family: "Open Sans", sans-serif;
+}
+.recorded-courses-page .typofix ul li {
+	list-style: circle;
+}
+.recorded-courses-page .typofix blockquote,
+.recorded-courses-page .typofix ol,
+.recorded-courses-page .typofix ul {
+	margin-left: 1rem;
+}
+.recorded-courses-page .typofix strong {
+	font-weight: bolder;
+	color: #000;
+	font-weight: bold;
+}
+.recorded-courses-page .video {
+	width: 100%;
+	max-height: 450px;
+	margin: 10px 0px 50px;
+	box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 101px 0px;
+	background: linear-gradient(to top, #fff, #dcf7f6);
+	padding: 10px;
+	text-align: center;
+}
+.recorded-courses-page .video video {
+	height: 100% !important;
+	width: 100% !important;
+	border: 1px solid #fff;
+}
